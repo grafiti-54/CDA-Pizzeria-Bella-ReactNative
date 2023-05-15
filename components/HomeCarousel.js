@@ -52,6 +52,7 @@ const ENTRIES = [
 const HomeCarousel = () => {
   return (
     <SwiperFlatList
+      
       autoplay
       autoplayDelay={4}
       autoplayLoop
