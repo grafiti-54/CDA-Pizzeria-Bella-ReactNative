@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     marginBottom: windowWidth > 600 ? 0 : 20,
   },
   h6: {
-    fontSize: 17,
+    fontSize: 16,
     marginBottom: 10,
     marginTop: 10,
     color:"white",
