@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import HomeCarousel from "../components/HomeCarousel";
 import Footer from "../components/Footer";
 import Promotion from "../components/Promotion";
+import MyMap from "../components/MyMap";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -79,6 +80,9 @@ const HomeScreen = () => {
       </View>
       <View>
         <Promotion />
+      </View>
+      <View style={{width: "100%"}}>
+        <MyMap />
       </View>
       <View>
         <Footer />
