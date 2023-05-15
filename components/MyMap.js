@@ -35,7 +35,16 @@ const MyMap = () => {
   `;
 
   return (
-    <View style={{ height: 500, position: "relative" }}>
+    <View
+      style={{
+        height: 500,
+        position: "relative",
+        borderRightWidth: 10,
+        borderTopWidth: 10,
+        borderBottomWidth: 10,
+        borderColor: "white",
+      }}
+    >
       <WebView
         originWhitelist={["*"]}
         source={{ html: mapHtml }}
@@ -54,14 +63,14 @@ const MyMap = () => {
         <Text
           style={{
             position: "absolute",
-            left: 30,
+            left: 20,
             bottom: 80, // dynamique
             fontSize: 18,
             fontFamily: "Paprika",
             color: "white",
             backgroundColor: "#C00A27",
             padding: 10,
-            borderRadius:50,
+            borderRadius: 50,
             textShadowColor: "rgba(0, 0, 0, 0.75)",
             textShadowOffset: { width: -1, height: 1 },
             textShadowRadius: 10,

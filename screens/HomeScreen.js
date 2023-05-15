@@ -1,12 +1,15 @@
 import { ScrollView, StyleSheet, Text, View, Animated } from "react-native";
 import React, { useLayoutEffect, useState, useRef } from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
 import Header from "../components/Header";
 import HomeCarousel from "../components/HomeCarousel";
 import Footer from "../components/Footer";
 import Promotion from "../components/Promotion";
 import MyMap from "../components/MyMap";
+import ContactForm from "../components/ContactForm";
+import CarteFidelite from "../components/CarteFidelite";
+import MyMenu from "./../components/MyMenu";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -81,8 +84,19 @@ const HomeScreen = () => {
       <View>
         <Promotion />
       </View>
-      <View style={{width: "100%"}}>
+      <View style={{ height: 500, overflow: "hidden" }}>
+        <ScrollView nestedScrollEnabled>
+          <MyMenu />
+        </ScrollView>
+      </View>
+      <View>
+        <CarteFidelite />
+      </View>
+      <View>
         <MyMap />
+      </View>
+      <View>
+        <ContactForm />
       </View>
       <View>
         <Footer />
