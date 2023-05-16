@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: windowWidth < 768 ? 20 : 40, 
+    fontSize: 14,
     textAlign: 'center',
     fontFamily: 'Avenir-Next',
   },
