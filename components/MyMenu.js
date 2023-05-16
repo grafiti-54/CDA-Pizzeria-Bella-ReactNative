@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Button, FlatList, Image, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, FlatList, Image, StyleSheet } from "react-native";
 import { pizzas } from "../data.js";
 
 const MyMenu = () => {
@@ -20,23 +20,35 @@ const MyMenu = () => {
   return (
     <View style={styles.container}>
       <View style={styles.buttonsContainer}>
-        <Button
+        <TouchableOpacity
+          style={[
+            styles.button,
+            selectedBase === "Tomate" ? styles.selectedButtonTomate : null,
+          ]}
           onPress={() => handleButtonClick("Tomate")}
-          title="BASE TOMATE"
-          color={selectedBase === "Tomate" ? "red" : "white"}
-        />
+        >
+          <Text style={styles.buttonText}>TOMATE</Text>
+        </TouchableOpacity>
 
-        <Button
+        <TouchableOpacity
+          style={[
+            styles.button,
+            selectedBase === "Crème fraîche" ? styles.selectedButtonCreme : null,
+          ]}
           onPress={() => handleButtonClick("Crème fraîche")}
-          title="BASE CREME FRAICHE"
-          color={selectedBase === "Crème fraîche" ? "yellow" : "white"}
-        />
+        >
+          <Text style={styles.buttonText}>CREME FRAICHE</Text>
+        </TouchableOpacity>
 
-        <Button
+        <TouchableOpacity
+          style={[
+            styles.button,
+            selectedBase === "Chocolat" ? styles.selectedButtonChoco : null,
+          ]}
           onPress={() => handleButtonClick("Chocolat")}
-          title="BASE CHOCOLAT"
-          color={selectedBase === "Chocolat" ? "gray" : "white"}
-        />
+        >
+          <Text style={styles.buttonText}>CHOCOLAT</Text>
+        </TouchableOpacity>
       </View>
 
       <FlatList
@@ -64,18 +76,45 @@ const MyMenu = () => {
 };
 
 const styles = StyleSheet.create({
+  //Container prinipal
   container: {
     flex: 1,
     padding: 20,
     backgroundColor: "#F5F5F5",
   },
+  //container button
   buttonsContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     marginBottom: 20,
   },
+  button: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: "white",
+    borderRadius: 5,
+  },
+  selectedButtonTomate: {
+    backgroundColor: "#C00A27",
+  },
+  selectedButtonCreme: {
+    backgroundColor: "#FFC222",
+  },
+  selectedButtonChoco: {
+    backgroundColor: "#EDEDED",
+  },
+  buttonText: {
+    color: "black",
+    fontSize: 16,
+  },
+  buttonTomate:{
+
+  },
   card: {
-    height: 200,
+    height: 250,
+    width:"85%",
+    marginLeft:"auto",
+    marginRight:"auto",
     borderRadius: 10,
     backgroundColor: "#fff",
     marginBottom: 20,

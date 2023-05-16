@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, TextInput, Button, Alert, StyleSheet, Text } from 'react-native';
+import React, { useState } from "react";
+import { View, TextInput, TouchableOpacity, Alert, StyleSheet, Text } from "react-native";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -17,7 +17,10 @@ const ContactForm = () => {
     } else if (name && email && subject && message) {
       Alert.alert("Succès", "Message envoyé");
     } else {
-      Alert.alert("Erreur", "Erreur lors de l'envoi du message. Veuillez réessayer.");
+      Alert.alert(
+        "Erreur",
+        "Erreur lors de l'envoi du message. Veuillez réessayer."
+      );
     }
   };
 
@@ -56,11 +59,9 @@ const ContactForm = () => {
       />
 
       <View style={styles.buttonContainer}>
-        <Button
-          title="Envoyer"
-          color="#000"
-          onPress={sendEmail}
-        />
+        <TouchableOpacity style={styles.button} onPress={sendEmail}>
+          <Text style={styles.buttonText}>Envoyer</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -69,33 +70,51 @@ const ContactForm = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#F5F5F5',
+    justifyContent: "center",
+    padding: "5%",
+    backgroundColor: "#F5F5F5",
+    borderWidth: 15,
+    borderColor: "#FFFFFF",
+    borderRadius: 15,
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20,
-    textAlign: 'center',
+    textAlign: "center",
   },
   input: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: "gray",
     borderWidth: 1,
     paddingLeft: 10,
     marginBottom: 10,
     borderRadius: 15,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
+    borderColor: "#FFFFFF",
   },
   textArea: {
     height: 100,
   },
   buttonContainer: {
     marginTop: 10,
-    backgroundColor: '#ffd700',
-    borderRadius: 10,
-    overflow: 'hidden',
+    borderRadius: 20,
+    overflow: "hidden",
+    width: "50%",
+  },
+  button: {
+    backgroundColor: "#ffd700",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 35,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "black",
+    fontSize: 16,
+    fontWeight:"bold",
+    padding:8,
+    fontFamily: "Yanone-Kaff",
   },
 });
 
